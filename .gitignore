@@ -7,7 +7,7 @@
 # Python cache
 # ===============================
 __pycache__/
-*.pyc
+*.pyc .
 
 # ===============================
 # Third-party code (vendored but ignored)
