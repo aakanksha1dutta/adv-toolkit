@@ -20,7 +20,7 @@ adv-toolkit/
 │           └── netG_BIA+RN_0.pth
 ├── Beyond-ImageNet-Attack/
 ├── core/
-│   ├── \__init__.py
+│   ├── __init__.py
 │   ├── attacker.py              # Attack implementation
 │   ├── data_loader.py            # Dataset loading utilities
 │   ├── generator.py              # GAN generator models
@@ -32,7 +32,7 @@ adv-toolkit/
 ├── default_model/
 │   └── cifar10.ts                # Default CIFAR-10 model
 ├── utils/
-│   ├── \__init__.py
+│   ├── __init__.py
 │   ├── dashboard.py              # Streamlit interactive visualizations
 │   ├── init.py                   # Initialization & SSL fixes
 │   ├── metrics.py                # Robustness metrics calculation
