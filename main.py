@@ -135,8 +135,9 @@ st.sidebar.subheader("5. Test Dataset")
 dataset_file = st.sidebar.file_uploader(
     "Upload test dataset (.zip)",
     type=["zip"],
-    help="Upload a zip file containing test images"
+    help="Upload a zip file containing test images. You can download one for CIFAR10 in the download tab."
 )
+use_default_test = st.sidebar.checkbox("Use default CIFAR-10 test", value=(dataset_file is None))
 
 n_examples = st.sidebar.number_input(
     "Number of examples to test",
@@ -175,9 +176,8 @@ with tab1:
     """)
     
     # Run attack button
-    run_disabled = dataset_file is None
     
-    if st.button(f"🚀 Run Attack", type="primary", disabled=run_disabled, use_container_width=True):
+    if st.button(f"🚀 Run Attack", type="primary", use_container_width=True):
         with st.spinner("Running attack... This may take a few minutes."):
             try:
                 # Create Args object with uploaded files
@@ -193,8 +193,9 @@ with tab1:
                 
                 # Load dataloader directly from uploaded zip
                 with st.spinner("Loading dataset..."):
-                    loader = get_dataloader_from_upload(
-                        dataset_file,
+                    default_test = 'data/test.zip'
+                    loader = get_dataloader_smart(
+                        dataset_file if use_default_test is None else default_test,
                         n_examples=n_examples,
                         shuffle=shuffle_data
                     )
