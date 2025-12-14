@@ -2,7 +2,7 @@
 # Download Files After Cloning
 - **Download:** `test.zip` (CIFAR10 Test Files)
   - **Place here:** `data/test.zip`
-  - **Link:** <[https://drive.google.com/file/d/1cj0oADWCt0WOZ6RzLUUdjHo0Yc55oYfx/view?usp=share_link](https://drive.google.com/file/d/1kwBjl2BFUwZp17o29utUrjzqXowc8NV7/view?usp=share_link)>
+  - **Link:** <https://drive.google.com/file/d/1KeqxfGOsKxfuIP98d2wTFuqj4S-IBvZw/view?usp=sharing>
 
 - **Download:** Pretrained Generator Checkpoints
   - **Place here:** `attacks/BIA/`
