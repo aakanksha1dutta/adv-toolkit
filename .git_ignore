@@ -1,6 +1,0 @@
-*/.DS_Store
-Beyond-ImageNet-Attack/
-data/*
-!data/test.zip
-__pycache__/
-attacks/BIA/vgg19/*
