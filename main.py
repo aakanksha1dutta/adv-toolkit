@@ -10,6 +10,7 @@ import json
 from core.data_loader import get_dataloader_from_upload, get_dataloader_smart
 from core.attacker import bia_attack
 from core.loader_checkpoint import load_gan
+from core.loader_sine_checkpoint import load_sine_attack, check_sine_available
 from core.model_loader import load_torchscript_model_smart
 from utils.transforms import load_transform_smart
 from utils.dashboard import create_full_dashboard
@@ -200,17 +201,21 @@ with tab1:
                 
                 # Load attacker
                 with st.spinner("Loading attacker..."):
-                    attacker = load_gan(args)
+                    bia_attacker = load_gan(args)
+                    sa_attacker = None
+                    if check_sine_available():
+                        sa_attacker = load_sine_attack(device=args.device)
                 
                 # Run attack
                 with st.spinner("Generating adversarial examples..."):
                     results = bia_attack(
-                        attacker,
+                        bia_attacker,
                         args.loaded_target_model,
                         loader,
                         args.device,
                         args.eps,
-                        user_transform=args.user_transform
+                        user_transform=args.user_transform,
+                        sine_attacker=sa_attacker
                     )
                 
                 # Calculate metrics
