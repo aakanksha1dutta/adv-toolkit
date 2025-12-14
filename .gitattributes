@@ -4,3 +4,4 @@
 Track filter=lfs diff=lfs merge=lfs -text
 TorchScript filter=lfs diff=lfs merge=lfs -text
 models filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
