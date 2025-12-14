@@ -1,6 +1,6 @@
 
 # Download Files After Cloning
-- **Download:** `test.zip`
+- **Download:** `test.zip` (CIFAR10 Test Files)
   - **Place here:** `data/test.zip`
   - **Link:** <https://drive.google.com/file/d/1cj0oADWCt0WOZ6RzLUUdjHo0Yc55oYfx/view?usp=share_link>
 
